@@ -3,24 +3,26 @@
 ;;;
 ;;; author: Satoshi Namai
 ;;;
-;;; Time-stamp: <2012-08-13 01:10:07 (namai)>
+;;; Time-stamp: <2012-08-13 04:14:08 (namai)>
 ;;;
 
 (require 'key-chord)
 
-(defun turn-off-hjkl-mode ()
-  (interactive)
-  (hjkl-mode -1))
-
 (defun turn-on-hjkl-mode ()
   (interactive)
+  (message "%s" "-- NORMAL --")
   (hjkl-mode t))
+
+(defun turn-off-hjkl-mode ()
+  (interactive)
+  (message "%s" "-- INSERT --")
+  (hjkl-mode -1))
 
 (defun hjkl/delete-line-on-cursor ()
   (interactive)
-    (beginning-of-line)
-    (kill-line)
-    (kill-line))
+  (kill-new (thing-at-point 'line))
+  (delete-region (point-at-bol) (+ 1 (point-at-eol)))
+  (back-to-indentation))
 
 (defun hjkl/insert-next-line ()
   (interactive)
@@ -45,7 +47,6 @@
   (if (fboundp 'undo-tree-undo)
       (undo-tree-undo)
     (undo)))
-
 
 (defvar hjkl-mode-map
   (let ((map (make-sparse-keymap)))
