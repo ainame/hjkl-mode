@@ -44,7 +44,7 @@
   (interactive)
   (if (fboundp 'undo-tree-undo)
       (undo-tree-undo)
-    (undo))))
+    (undo)))
 
 
 (defvar hjkl-mode-map
