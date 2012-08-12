@@ -3,7 +3,7 @@
 ;;;
 ;;; author: Satoshi Namai
 ;;;
-;;; Time-stamp: <2012-08-13 04:21:18 (namai)>
+;;; Time-stamp: <2012-08-13 04:28:28 (namai)>
 ;;;
 
 (require 'key-chord)
@@ -30,6 +30,11 @@
   (open-line 1)
   (forward-line)
   (beginning-of-line))
+
+(defun hjkl/yank ()
+  (interactive)
+  (forward-line)
+  (yank))
 
 (defun hjkl/yank-to-next-line ()
   (interactive)
@@ -64,7 +69,7 @@
     (define-key map (kbd "y") 'kill-ring-save)
     (define-key map (kbd "x") 'delete-char)
     (define-key map (kbd "d w") 'kill-word)
-    (define-key map (kbd "p") 'yank)
+    (define-key map (kbd "p") 'hjkl/yank)
     (define-key map (kbd "P") 'hjkl/yank-to-next-line)
     (define-key map (kbd "v") 'set-mark-command)
     (define-key map (kbd "u") 'hjkl/undo)
