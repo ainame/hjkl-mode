@@ -3,7 +3,7 @@
 ;;;
 ;;; author: Satoshi Namai
 ;;;
-;;; Time-stamp: <2012-08-13 04:14:08 (namai)>
+;;; Time-stamp: <2012-08-13 04:21:18 (namai)>
 ;;;
 
 (require 'key-chord)
@@ -28,12 +28,12 @@
   (interactive)
   (hjkl-mode -1)
   (open-line 1)
-  (next-line)
+  (forward-line)
   (beginning-of-line))
 
 (defun hjkl/yank-to-next-line ()
   (interactive)
-  (next-line)
+  (forward-line)
   (beginning-of-line)
   (yank)
   (beginning-of-line))
