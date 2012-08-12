@@ -3,7 +3,7 @@
 ;;;
 ;;; author: Satoshi Namai
 ;;;
-;;; Time-stamp: <2012-08-12 21:01:29 (namai)>
+;;; Time-stamp: <2012-08-13 01:10:07 (namai)>
 ;;;
 
 (require 'key-chord)
@@ -62,7 +62,7 @@
     (define-key map (kbd "d d") 'hjkl/delete-line-on-cursor)
     (define-key map (kbd "y") 'kill-ring-save)
     (define-key map (kbd "x") 'delete-char)
-    (define-key map (kdb "d w") 'subword-kill)
+    (define-key map (kbd "d w") 'kill-word)
     (define-key map (kbd "p") 'yank)
     (define-key map (kbd "P") 'hjkl/yank-to-next-line)
     (define-key map (kbd "v") 'set-mark-command)
