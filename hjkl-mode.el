@@ -59,7 +59,7 @@
     (define-key map (kbd "k") 'previous-line)
     (define-key map (kbd "l") 'forward-char)
     (define-key map (kbd "h") 'backward-char)
-    (define-key map (kbd "0") 'move-biginning-of-line)
+    (define-key map (kbd "0") 'move-beginning-of-line)
     (define-key map (kbd "$") 'move-end-of-line)
     (define-key map (kbd "g g") 'beginning-of-buffer)
     (define-key map (kbd "G") 'end-of-buffer)
